@@ -1,0 +1,93 @@
+<html>
+<head>
+ <title>jQuery Mobile page</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="themes/theme.css" />
+  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
+
+
+<style>
+
+body {margin:2; padding: 2;}
+.layout {width: 100%; border: none;}
+.layout td {vertical-align: top;}
+.column {width: 200px;}
+header img{float:left; width:300px; height: 150px;}
+header h1{padding:1.8em; color:white; clear:right; text-align:right; background-color:black;}
+.mySlides {display:none;}
+.footer {background: #A81C1C url(footer.gif);}
+
+</style>
+</head>
+<body>
+<table class="layout" cellspacing="0">
+<tr>
+<td colspan="2">
+<header>
+
+<img class="mySlides" src="a.jpg" alt="html tutorial">
+  <img class="mySlides" src="b.jpg" alt="html tutorial">
+  <img class="mySlides" src="c.jpg" alt="html tutorial">
+<img class="mySlides" src="cea.jpg" alt="html tutorial">
+<h1 class="w3-right">Computer Education Academy
+</h1>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+</header>
+</td>
+</tr>
+<tr>
+<td class="column">
+
+<legend>
+<b style=color:red><h2>Testimonals:</h2></b>
+</legend>
+<textarea name="testimonials" rows="4" cols="30" name="usertestimonials" wrap="hard" style="max-height: 100px; 
+min-height: 80px; resize: none" placeholder="Testimonials">
+ I did extensive research, trying to find the right IT program that would get me the training and certifications that i needed to get into the university.</textarea>
+					<p><INPUT TYPE="button" buttoncolor="red" onClick="parent.location='applynow.html'"
+					value="Apply Now >>"></p>
+</td>
+<td class="content">
+<h2 style=color:red>Welcome to the Computer Education Academy(CEA):</h2>
+<p>Computer Education Academy(CEA) in Fairfield University is pleasent to announce the opening of the applications for 2016-2017 academic year.</p>
+            <p>CEA is a fun-filled active computer learning community for twenty 10th and 11th grade high school students. The Academy will be held from 9a.m. to 1 p.m. for 24 Saturdays 
+during the 20016-2017 academic school year. Bus transportation and lunch will be available to all studentss at no cost to them.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="footer" data-id="Main" data-position="fixed">
+<div data-role="navbar">
+<ul>
+        <li><a href="#Home" data-ajax="false" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+        <li><a href="about.html"   data-ajax="false" data-icon="info">About</a></li>
+        <li><a href="contact.html"  data-ajax="false" data-icon="search">Contact</a></li>
+        <li><a href="register.html" data-ajax="false" data-icon="grid">Register</a></li>
+        <li><a href="links.html" data-ajax="false" data-icon="grid">Links</a></li>
+</ul>
+</td>
+</tr>
+</table>
+
+</body>
+</html>
+

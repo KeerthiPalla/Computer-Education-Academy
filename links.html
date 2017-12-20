@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Mobile page</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="themes/theme.css" />
+  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
+
+<style>
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 14px;
+    width: 100%;
+    height:50px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+}
+
+div.panel.show {
+    opacity: 1;
+    max-height: 500px;
+}
+</style>
+</head>
+	<div data-role="page" id="links" data-title="Links" data-theme="a">
+		<div data-role="header" data-position="fixed">
+			<img src="cea.jpg" alt="CEA Logo"
+				style="width: 55px; height: 53px; display: inline; float: left;" />
+			<h1>Computing Education Academy</h1>
+		</div>
+		<button class="accordion"><h3>Useful Links:</h3></button>
+<div id="links" class="panel">
+					
+					<ul>
+						<li><a href="http://ww2.kqed.org/mindshift/2011/12/15/should-computer-science-be-required-in-k-12/">Should Computer Science Be Required in K-12?</a></li>
+						<li><a href="https://csta.acm.org/Communications/sub/DocsPresentationFiles/StephensonSTEMEvenFinal.pdf">The state of Computer education for K-12 Students</a></li>
+						<li><a href="https://www.linkedin.com/pulse/importance-computer-science-education-k-12-suren-ramasubbu">Importance of Computer Education for K-12 students.</a></li>
+						<li><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=7011123&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D7011123">Motivating
+								Fundamental Computer Science concepts with App Inventor</a></li>
+						<li><a href="http://www.watchknowlearn.org/">Free Educational videos for k-12 students</a></li>
+	
+						<li><a href="http://www.academia.edu/8123150/Teaching_and_Learning_with_Mobile_Computing_Devices_Case_Study_in_K-12_Classrooms">Case Study in K-12
+								Classrooms</a></li>
+                                                <li><a href="https://code.org/files/Making_CS_Fundamental.pdf">Making Computer Science fundamental to k-12 students</a></li>
+                                                <li><a href="http://csedu.gallup.com/home.aspx">Landscape of Computer Science for k-12 students in usa</a></li>
+<li><a href="http://www.theatlantic.com/education/archive/2015/03/the-deconstruction-of-the-k-12-teacher/388631/">Deconstruction of Computer Science teachers for k-12 students</a></li>
+				<li><a href="http://www.slideshare.net/mastermind10538/importance-of-computer-in-education">Presentation for computer education importance</a></li>	
+</ul>
+				</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+  }
+}
+</script>
+			
+
+		<div data-role="footer" data-id="main" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="index.html" data-ajax="false" data-icon="home">Home</a></li>
+					<li><a href="about.html" data-ajax="false" data-icon="info">About</a></li>
+					<li><a href="contact.html" data-ajax="false" data-icon="mail">Contact</a></li>
+					<li><a href="applynow.html" data-ajax="false" data-icon="edit">Apply Now!</a></li>
+					<li><a href="links.html" ddata-ajax="false" data-icon="bullets" class="ui-btn-active ui-state-persist">Links</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

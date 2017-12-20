@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>jQuery Mobile page</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="themes/theme.css" />
+  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
+
+
+    <!-- Form validation -->
+    <script src="js/jquery.validate.min.js"></script>
+       <style>
+
+        #register-form .fieldgroup {
+            padding: 8px 10px;
+            width: max;
+        }
+        
+        #register-form .fieldgroup label {
+            float: left;
+            padding: 15px 0 0;
+            text-align: right;
+            width: 110px;
+        }
+
+        #register-form .fieldgroup label.error {
+			color: #FACC2E;
+            display: inline-block;
+            margin: 4px 0 5px 5px;
+            padding: 0;
+            text-align: left;
+            width: 420px;
+        }
+    </style>
+	
+    <script type="text/javascript">
+        (function($, W, D) {
+            var JQUERY4U = {};
+
+            JQUERY4U.UTIL = {
+                setupFormValidation: function() {
+                    //form validation rules
+                    $("#register-form").validate({
+                        rules: {
+                            firstname: "required",
+                            lastname: "required",
+                            highschoolname: "required",
+							graduationyear: {
+                                required: true,
+								digits: true,
+                                minlength: 4
+                            },
+                            address1: "required",
+                            city: "required",
+                            state: "required",
+							zipcode: {
+                                required: true,
+								digits: true,
+                                minlength: 5
+                            },
+                            phone: "required",							
+                            essay: {
+                                required: true,
+                                minlength: 100
+                            },
+							gpa: {
+                                required: true,
+                                range: [0, 5]
+                            },
+                            email: {
+                                required: true,
+                                email: true,
+                                minlength: 7
+                            },							
+                        },
+                        messages: {
+                            firstname: "*Please enter your first name.",
+                            lastname: "*Please enter your last name.",
+                            highschoolname: "*Please enter your highschool name.",	
+							graduationyear: {
+                                required: "*Please enter your graduation year.",
+								digits: "*Graduation year must be in digits.",
+                                minlength: "*Graduation year must be in 4 digits."
+                            },							
+                            address1: "*Please enter your address.",
+                            city: "*Please enter your city.",
+                            state: "*Please enter your state.",
+							zipcode: {
+                                required: "*Please enter your zipcode.",
+								digits: "*Zipcode must be in digits.",
+                                minlength: "*Zipcode must be in 5 digits."
+                            },
+                            phone: "*Please enter your phone number.",
+                            essay: {
+                                required: "*Please complete your essay.",
+                                minlength: "*Your essay must be at least 100 characters long."
+                            },
+							gpa: {
+                                required: "*Please enter your current GPA.",
+                                minlength: "*Your GPA must be the number between 0 and 5."
+                            },
+                            email: {
+                                required: "*Please enter your email.",
+                                minlength: "*Your email must be at least 7 characters long."
+                            },
+                        },
+                        submitHandler: function(form) {
+                            form.submit();
+                        }
+                    });
+                }
+            }
+
+            //when the dom has loaded setup form validation rules
+            $(D).ready(function($) {
+                JQUERY4U.UTIL.setupFormValidation();
+            });
+
+        })(jQuery, window, document);
+    </script>
+
+	<!-- End Form Validation -->
+</head>
+
+<body>
+    <div data-role="page" id="applyNow" data-title="Apply Now" data-theme="a">
+        <div data-role="header" data-position="fixed">
+            <img src="cea.jpg" alt="CEA Logo" 
+				style="width: 55px; height: 53px; display: inline; float: left;" />
+            <h1>Computing Education Academy</h1>
+        </div>
+
+        <!-- HTML form for registration -->
+        <form action="" method="post" id="register-form" novalidate="novalidate">
+
+            <div data-role="content">
+                <fieldset>
+                    <legend>
+                        <p><b>Please fill out below application:</b></p>
+                    </legend>
+                    <div class="fieldgroup">
+                        <input type="text" id="firstname" name="firstname" placeholder="First Name" autofocus>
+                    </div>
+                    <div class="fieldgroup">
+                        <input type="text" id="lastname" name="lastname" placeholder="Last Name">
+                    </div>
+                    <div class="fieldgroup">
+                        <input type="text" id="middlename" name="middlename" placeholder="Middle Name">
+                    </div>
+                    <div class="fieldgroup">
+                        <input type="text" id="highschoolname" name="highschoolname" placeholder="Highschool Name">
+                    </div>
+                    <div class="fieldgroup">
+                        <input type="number" id="graduationyear" name="graduationyear" placeholder="Graduation Year">
+                    </div>
+                    <div class="fieldgroup">
+                        <input type="number" id="gpa" name="gpa" placeholder="Current GPA">
+                    </div>
+                    <div class="fieldgroup">
+                        <input type="text" id="address1" name="address1" placeholder="Address 1">
+                    </div>
+                    <div class="fieldgroup">
+                        <input type="text" id="address2" name="address2" placeholder="Address 2">
+                    </div>
+                    <div class="fieldgroup">
+                        <input type="text" id="city" name="city" placeholder="City">
+                    </div>
+                    <div class="fieldgroup">
+                        <input type="text" id="state" name="state" placeholder="State">
+                    </div>
+                    <div class="fieldgroup">
+                        <input type="number" id="zipcode" name="zipcode" placeholder="Zipcode">
+                    </div>
+                    <div class="fieldgroup">
+                        <input type="tel" id="phone" name="phone" placeholder="Telephone">
+                    </div>
+                    <div class="fieldgroup">
+                        <input type="email" id="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="fieldgroup">
+                        <textarea name="courselist" rows="2" cols="20" name="courselist" wrap="hard" style="max-height: 100px; min-height: 100px; resize: none" value="none" placeholder="Please indicate any classes that were already taken or that you are planning to take in the upcoming school year." ></textarea>
+                    </div>
+                    <div class="fieldgroup">						
+                        <textarea name="essay" rows="2" cols="20" name="essay" wrap="hard" style="max-height: 100px; min-height: 100px; resize: none" placeholder="Write your essay here." pattern=".{100,}" ></textarea>
+                    </div>                    
+                </fieldset>
+				<div class="fieldgroup">
+					<input type="submit" value="Submit" class="submit">
+                </div>
+            </div>
+        </form>
+        <!-- END HHTML form for registration-->
+		
+        <div data-role="footer" data-id="main" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="index.html" data-ajax="false" data-icon="home">Home</a></li>
+                    <li><a href="about.html" data-ajax="false" data-icon="info">About</a></li>
+                    <li><a href="contact.html" data-ajax="false" data-icon="mail">Contact</a></li>
+                    <li><a href="applynow.html" data-ajax="false" data-icon="edit" class="ui-btn-active ui-state-persist">Apply Now!</a></li>
+                    <li><a href="links.html" data-ajax="false" data-icon="bullets">Links</a></li>
+                </ul>
+            </div>
+        </div>
+</body>
+
+</html>
